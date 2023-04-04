@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces&display=swap");
+.intro {
+  position: relative;
+  width: 375px;
+  height: 538px;
+  background-image: url(assets/image-header.jpg);
+  background-size: 200%;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  color: white;
+  background-color: #3ebfff;
+}
+.intro .logo {
+  position: absolute;
+  top: 32px;
+  left: 24px;
+  width: 123.64px;
+  height: 24px;
+}
+.intro .hamburger {
+  position: absolute;
+  top: 35px;
+  right: 24px;
+}
+.intro .creatives {
+  position: absolute;
+  text-align: center;
+  width: 327px;
+  top: 144px;
+  left: 24px;
+  text-transform: uppercase;
+  letter-spacing: 6.25px;
+  font-size: 40px;
+  font-weight: 900;
+  font-family: "Fraunces";
+}
+.intro .arrow {
+  position: absolute;
+  width: 30px;
+  height: 107.48px;
+  top: 294px;
+  left: 170px;
+}
+
+body {
+  width: 100%;
+}
+body .egg {
+  width: 375px;
+  height: 312px;
+  background-image: url(assets/photos/image-transform.jpg);
+  background-size: cover;
+}
+body div {
+  width: 375px;
+}
+body .transform, body .stand-out {
+  position: relative;
+  width: 309px;
+  height: 327px;
+  text-align: center;
+  padding: 33px;
+  font-size: 40px;
+  font-weight: 900;
+  font-family: "Frau";
+}
+body .transform h2, body .stand-out h2 {
+  color: #24303E;
+  letter-spacing: -0.23px;
+  line-height: 39.46px;
+  text-transform: capitalize;
+  font-family: "Fraunces";
+  font-weight: 900;
+  font-size: 32px;
+}
+body .transform p, body .stand-out p {
+  color: #808397;
+  letter-spacing: -0.13px;
+  font-weight: 600;
+  font-family: "barlow";
+  font-size: 18px;
+}
+body .transform a, body .stand-out a {
+  letter-spacing: 1px;
+  line-height: 25px;
+  text-transform: uppercase;
+  color: #24303E;
+  font-family: "Fraunces";
+  font-weight: 900;
+  font-size: 15px;
+}
+body .cup {
+  width: 375px;
+  height: 312px;
+}
+body .graphic-design {
+  background-image: url(assets/photos/image-graphic-design.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 375px;
+  height: 600px;
+}
+body .gallery {
+  width: 375px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
+}
+body .gallery img {
+  width: 187.5px;
+  height: 187.5px;
+}
+
+footer {
+  width: 375px;
+}
+footer .internal-links {
+  width: 375px;
+  display: grid;
+}/*# sourceMappingURL=sunnyside-agency.css.map */
