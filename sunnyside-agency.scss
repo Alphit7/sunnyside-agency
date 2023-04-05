@@ -1,14 +1,69 @@
 @import url("https://fonts.googleapis.com/css2?family=Fraunces&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Fraunces&display=swap");
+$screen-sm-min: 375px;
+$screen-lg-min: 1440px;
+@mixin sm {
+  @media (min-width: #{$screen-sm-min}) {
+    @content;
+  }
+}
+@mixin lg {
+  @media (min-width: #{$screen-lg-min}) {
+    @content;
+  }
+}
 .intro {
-  position: relative;
-  width: 375px;
-  height: 538px;
-  background-image: url(assets/image-header.jpg);
-  background-size: 200%;
-  background-repeat: no-repeat;
-  background-position: bottom;
-  color: white;
-  background-color: #3ebfff;
+  @include sm {
+    position: relative;
+    height: 538px;
+    background-image: url(assets/image-header.jpg);
+    background-size: 200%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    color: white;
+    background-color: #3ebfff;
+  }
+  @include lg {
+    width: 1440px;
+    height: 800px;
+    background-size: 100%;
+  }
+  .top-links {
+    @include sm {
+      display: none;
+    }
+    @include lg {
+      width: 420px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+      position: relative;
+      left: 1000px;
+      top: 25px;
+      font: {
+        family: "Barlow";
+        weight: 600;
+        size: 18px;
+      }
+      .contacts {
+        color: #24303e;
+        background-color: white;
+        width: 140px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 28px;
+        line-height: 25px;
+        letter-spacing: -0.11px;
+        text-align: center;
+        font: {
+          family: "Fraunces";
+          weight: 700;
+          size: 15px;
+        }
+      }
+    }
+  }
   .logo {
     position: absolute;
     top: 32px;
@@ -17,115 +72,422 @@
     height: 24px;
   }
   .hamburger {
-    position: absolute;
-    top: 35px;
-    right: 24px;
+    @include sm {
+      position: absolute;
+      top: 35px;
+      right: 24px;
+    }
+    @include lg {
+      display: none;
+    }
   }
   .creatives {
-    position: absolute;
-    text-align: center;
-    width: 327px;
-    top: 144px;
-    left: 24px;
-    text-transform: uppercase;
-    letter-spacing: 6.25px;
-    font: {
-      size: 40px;
-      weight: 900;
-      family: "Fraunces";
+    @include sm {
+      position: absolute;
+      text-align: center;
+      width: 327px;
+      top: 144px;
+      left: 24px;
+      text-transform: uppercase;
+      letter-spacing: 6.25px;
+      font: {
+        size: 40px;
+        weight: 900;
+        family: "Fraunces";
+      }
+    }
+    @include lg {
+      width: 750px;
+      height: 69px;
+      left: 344.5px;
+      letter-spacing: 8.75px;
+      line-height: 69.05px;
+      font: {
+        size: 56px;
+      }
     }
   }
   .arrow {
-    position: absolute;
-    width: 30px;
-    height: 107.48px;
-    top: 294px;
-    left: 170px;
+    @include sm {
+      position: absolute;
+      width: 30px;
+      height: 107.48px;
+      top: 294px;
+      left: 170px;
+    }
+    @include lg {
+      left: 705px;
+      top: 360px;
+    }
   }
 }
 body {
-  width: 100%;
-  .egg {
-    width: 375px;
-    height: 312px;
-    background-image: url(assets/photos/image-transform.jpg);
-    background-size: cover;
-  }
+  display: flex;
+  flex-direction: column;
   div {
     width: 375px;
   }
+  .transform-egg {
+    @include lg {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    }
+  }
+  .egg {
+    @include sm {
+      width: 375px;
+      height: 312px;
+    }
+    @include lg {
+      width: 720px;
+      height: 600px;
+    }
+  }
   .transform {
-    position: relative;
-    width: 309px;
-    height: 327px;
-    text-align: center;
-    padding: 33px;
-    font: {
-      size: 40px;
-      weight: 900;
-      family: "Frau";
-    }
-    & h2 {
-    color: #24303E;
-      letter-spacing: -0.23px;
-      line-height: 39.46px;
-      text-transform: capitalize;
+    @include sm {
+      position: relative;
+      width: 309px;
+      height: 327px;
+      text-align: center;
+      padding: 33px;
       font: {
-        family:'Fraunces';
+        size: 40px;
         weight: 900;
-        size: 32px;
+        family: "Frau";
       }
-    }
-    & p {
+      & h2 {
+        color: #24303e;
+        letter-spacing: -0.23px;
+        line-height: 39.46px;
+        text-transform: capitalize;
+        font: {
+          family: "Fraunces";
+          weight: 900;
+          size: 32px;
+        }
+      }
+      & p {
         color: #808397;
-      letter-spacing: -0.13px;
-      font: {
-        weight: 600;
-        family: 'barlow';
-        size: 18px;
+        letter-spacing: -0.13px;
+        font: {
+          weight: 600;
+          family: "barlow";
+          size: 18px;
+        }
       }
-    }
-    & a{
+      & a {
         letter-spacing: 1px;
         line-height: 25px;
         text-transform: uppercase;
-        color: #24303E;
+        color: #24303e;
+        z-index: 1;
         font: {
-            family:'Fraunces';
-            weight:900;
-            size:15px;
+          family: "Fraunces";
+          weight: 900;
+          size: 15px;
         }
+      }
+      .rectangle {
+        position: relative;
+        z-index: 2;
+        left: 85px;
+        top: 42px;
+        background-color: #fad400;
+        opacity: 25%;
+        width: 137px;
+        height: 10px;
+        border-radius: 28px;
+      }
     }
-}
-.cup {
-    width: 375px;
-    height: 312px;
-}
-.stand-out {
-    @extend .transform
-}
-.graphic-design {
+    @include lg {
+      text-align: left;
+      width: 445px;
+      height: 285px;
+      padding-left: 137.5px;
+      padding-right: 137.5px;
+      padding-top: 107.5px;
+      padding-bottom: 107.5px;
+      & h2 {
+        width: 445px;
+        height: 98px;
+        font-size: 40px;
+        letter-spacing: -0.29px;
+        line-height: 49.32px;
+      }
+      & p {
+        font-size: 18px;
+        width: 445px;
+        height: 90px;
+        line-height: 30px;
+        letter-spacing: -0.13px;
+      }
+      & a {
+        width: 120px;
+        height: 25px;
+        font-size: 15px;
+        letter-spacing: 1px;
+        line-height: 25px;
+      }
+      .rectangle {
+        left: -15px;
+      }
+    }
+  }
+  .stand-out-cup {
+    @include lg{
+    display: flex;
+    flex-direction: row;
+    }
+  }
+  .cup {
+    @extend .egg;
+  }
+  .stand-out {
+      @extend .transform;
+      .rectangle {
+        background-color: #fe7766;
+      }
+  }
+  .graphic-photography{
+    @include sm{
+    display: flex;
+    flex-direction: column;
+    }
+    @include lg{
+      display: flex;
+      flex-direction: row;
+      width: 1440px;
+    }
+  }
+  .graphic-design {
+    @include sm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-image: url(assets/photos/image-graphic-design.jpg);
     background-size: cover;
     background-position: center;
     width: 375px;
     height: 600px;
-}
-.gallery{
-    width: 375px;
-    display:grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows:50% 50% ;
-}
-.gallery img{
-    width: 187.5px;
-    height: 187.5px;
-}
-}
-    footer {
-      width: 375px;
-      .internal-links {
-        width: 375px;
-        display: grid;
+    text-align: center;
+    & h2 {
+      position: relative;
+      width: 221px;
+      height: 35px;
+      line-height: 34.52px;
+      letter-spacing: -0.2px;
+      top: 398px;
+      font: {
+        family:'Fraunces';
+        weight:900;
+        size: 28px;
       }
     }
+    & p {
+      position: relative;
+      top: 398px;
+      width: 339px;
+      height: 81px;
+      line-height: 27px;
+      letter-spacing: -0.11px;
+      font: {
+        family:'Barlow';
+        weight:600;
+        size: 16px;
+    }
+    }
+  }
+    @include lg {
+      width: 720px;
+      height: 600px;
+    }
+  }
+  .photography {
+    @extend .graphic-design;
+    background-image: url(assets/photos/image-photography.jpg);
+  }
+  .client-testimonials {
+    @include sm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 327px;
+    height: 1108px;
+    padding: 24px;
+    .Emily {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 320px;
+    }
+    .Thomas {
+      @extend .Emily;
+    }
+    .Jennie {
+      @extend .Emily;
+      margin-bottom: 32px;
+    }
+    .title-testimonials {
+      position: relative;
+      letter-spacing: 4px;
+      line-height: 19.73px;
+      text-align: center;
+      color: #a7aaad;
+      width: 279px;
+      height: 20px;
+      text-transform: uppercase;
+      top: 20px;
+      font: {
+        family: "Fraunces";
+        weight: 900;
+        size: 16px;
+      }
+    }
+    .picture {
+      position: relative;
+      border-radius: 50%;
+      width: 72px;
+      top: 84px;
+    }
+    .testimonials {
+      color: #5b636d;
+      position: relative;
+      top: 84px;
+      line-height: 32px;
+      letter-spacing: -0.13;
+      text-align: center;
+      font: {
+        weight: 600;
+        family: "Barlow";
+        size: 18px;
+      }
+    }
+    .names {
+      position: relative;
+      top: 84px;
+      color: #24303e;
+      line-height: 22.19px;
+      letter-spacing: -0.13px;
+      text-align: center;
+      font: {
+        family: "Fraunces";
+        weight: 900;
+        size: 18px;
+      }
+    }
+    .occupation {
+      position: relative;
+      top: 84px;
+      color: #a7aaad;
+      line-height: 25px;
+      letter-spacing: -0.1;
+      text-align: center;
+      font: {
+        family: "Barlow";
+        weight: 600;
+        size: 14px;
+      }
+    }
+  }
+  @include lg{
+    width: 1440px;
+    height: 600px;
+    .clients {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      width: 1440px;
+    }
+  }
+    }
+  .gallery {
+    @include sm {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+  img {
+    width: 187.5px;
+    height: 187.5px;
+  }
+}
+@include lg {
+  display: flex;
+  flex-direction: row;
+  img {
+    width: 360px;
+    height: 447px;
+  }
+}
+}
+}
+footer {
+  @include sm {
+  display: flex;
+  flex-direction: column;
+  background-color: #90d4c6;
+  width: 375px;
+  height: 350px;
+  .logo {
+    position: relative;
+    left: 96px;
+    top: 64px;
+    width: 170px;
+    height: 33px;
+    filter: invert(38%) sepia(8%) saturate(2455%) hue-rotate(103deg)
+      brightness(60%) contrast(93%);
+    svg {
+      width: 170px;
+      height: 33px;
+    }
+  }
+  .internal-links {
+    position: relative;
+    left: 39px;
+    top: 93px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 297px;
+    height: 25px;
+    line-height: 25px;
+    letter-spacing: -0.13px;
+    color: #458d7e;
+    font: {
+      family: "Barlow";
+      weight: "600";
+      size: 18px;
+    }
+  }
+  .external-links {
+    position: relative;
+    left: 104px;
+    top: 186px;
+    width: 164px;
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+@include lg {
+  width: 1440px;
+  .logo {
+    left: 628px;
+  }
+  .internal-links {
+    left: 570px;
+    .services {
+      color: white;
+    }
+  }
+  .external-links {
+    left: 636px;
+  }
+}
+}
