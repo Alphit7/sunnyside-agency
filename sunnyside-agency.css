@@ -52,6 +52,9 @@
     font-weight: 700;
     font-size: 15px;
   }
+  .intro .top-links .contacts :hover {
+    filter: invert(61%) sepia(66%) saturate(1167%) hue-rotate(172deg) brightness(70%) contrast(104%);
+  }
 }
 .intro .logo {
   position: absolute;
@@ -440,6 +443,9 @@ body .photography {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+  footer .external-links a:hover {
+    filter: invert(100%) sepia(1%) saturate(7500%) hue-rotate(226deg) brightness(102%) contrast(100%);
   }
   footer .external-links svg {
     width: 20px;
